@@ -9,14 +9,15 @@ const styles = StyleSheet.create({
         borderBottomWidth: 2,
         borderColor: "black",
         width: "100%",
+        height: 60,
         flexDirection: 'row',
         justifyContent: 'space-between',   
         borderTopRightRadius: 8,
         borderTopLeftRadius: 8
     },
     image:{
-        width: 60,
-        height: 60,
+        height: "90%",
+        aspectRatio: 1/1,
         borderRadius: 10
     },
     songDetails:{
