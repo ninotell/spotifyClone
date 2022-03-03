@@ -25,5 +25,20 @@ export default {
     imageUri: 'https://cache.boston.com/resize/bonzai-fba/Globe_Photo/2011/04/14/1302796985_4480/539w.jpg',
     title: 'High on You',
     artist: 'Helen',
+  },{
+    id: '5',
+    imageUri: 'https://i.discogs.com/EnA3umv4sby3K_-gy4G8_-kpRfOaiQOTHdrHl7YistA/rs:fit/g:sm/q:90/h:600/w:600/czM6Ly9kaXNjb2dz/LWltYWdlcy9SLTEx/MjUwMDE1LTE1MTI3/Mzg5MzItNjQyMC5q/cGVn.jpeg',
+    title: 'Happy',
+    artist: 'Pharrel Williams',
+  },{
+    id: '6',
+    imageUri: 'https://i.pinimg.com/550x/f5/51/7c/f5517cb156cf4176e929137e3363c08d.jpg',
+    title: 'Get Lucky',
+    artist: 'Daft Punk',
+  },{
+    id: '7',
+    imageUri: 'https://4.bp.blogspot.com/--at1WgIYq20/WRboeV4EQtI/AAAAAAAADvc/p8PPvnFz45kR4UPfwiCACgqMPT0weUVvwCLcB/s1600/calvin-harris-funk-wav-bounces-vol-1.jpg',
+    title: 'Feels',
+    artist: 'Calvin Harris',
   }]
 }
