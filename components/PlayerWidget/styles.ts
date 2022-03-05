@@ -2,7 +2,7 @@ import { StyleSheet } from 'react-native'
 import Colors from '../../constants/Colors'
 
 const styles = StyleSheet.create({
-    container:{
+    container: {
         position: 'absolute',
         backgroundColor: "#121212",
         bottom: 49,
@@ -10,40 +10,47 @@ const styles = StyleSheet.create({
         borderColor: "black",
         width: "100%",
         height: 60,
-        flexDirection: 'row',
-        justifyContent: 'space-between',   
         borderTopRightRadius: 8,
         borderTopLeftRadius: 8
     },
-    image:{
+    containerDetails: {
+        flexDirection: 'row',
+        justifyContent: 'space-between',
+    },
+    image: {
         height: "90%",
-        aspectRatio: 1/1,
+        aspectRatio: 1 / 1,
         borderRadius: 10
     },
-    songDetails:{
+    songDetails: {
         paddingLeft: 10,
         flexDirection: 'row',
         justifyContent: 'center',
         alignItems: 'center',
-        
+
     },
-    songName:{
+    songName: {
         color: "white",
         fontSize: 16,
-        marginLeft: 10       
+        marginLeft: 10
     },
-    artist:{
+    artist: {
         color: "darkgray",
         fontSize: 15,
         marginLeft: 10
     },
-    buttons:{
+    buttons: {
         flexDirection: 'row',
         alignItems: 'center',
         paddingHorizontal: 15
     },
-    playPauseButton:{
+    playPauseButton: {
+        width: 24,
         marginLeft: 15
+    },
+    progressBar: {
+        height: 2,
+        backgroundColor: "white"
     }
 })
 
