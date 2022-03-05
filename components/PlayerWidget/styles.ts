@@ -42,7 +42,7 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         paddingHorizontal: 15
     },
-    play:{
+    playPauseButton:{
         marginLeft: 15
     }
 })
