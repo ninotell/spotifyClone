@@ -6,6 +6,10 @@ import useColorScheme from './hooks/useColorScheme';
 import Navigation from './navigation';
 import PlayerWidget from './components/PlayerWidget';
 
+import Amplify from 'aws-amplify'
+import awsconfig from './src/aws-exports'
+Amplify.configure(awsconfig)
+
 export default function App() {
   const isLoadingComplete = useCachedResources();
   const colorScheme = useColorScheme();

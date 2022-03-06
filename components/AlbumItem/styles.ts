@@ -16,6 +16,14 @@ const styles = StyleSheet.create({
         marginTop: 5,
         color: "white", 
         fontSize: 14       
+    },
+    albumName:{
+        marginTop: 5,
+        color: "white", 
+        fontSize: 15,
+        width: "100%",
+        textAlign: "center"
+        
     }
 })
 

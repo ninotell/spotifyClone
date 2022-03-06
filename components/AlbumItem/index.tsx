@@ -23,6 +23,7 @@ const AlbumItem = (props: AlbumProps) => {
       >
         <Image style={styles.image} source={{ uri: props.album.imageUri }}></Image>
       </TouchableOpacity>
+      <Text style={styles.albumName} numberOfLines={2} >{props.album.name}</Text>
       <Text style={styles.albumsNames} numberOfLines={2} >{props.album.artistsHeadline}</Text>
 
     </View>
