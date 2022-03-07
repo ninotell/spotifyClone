@@ -1,23 +1,31 @@
 import { Text, View, Image, TouchableOpacity } from 'react-native'
 import React from 'react'
 import styles from './styles'
+import { Song } from '../../types'
+import { Entypo } from '@expo/vector-icons';
 
 export type SongItemProps = {
-    image: string,
-    title: string,
-    artist: string,
+    song: Song;
 }
 
 const SongItem = (props: SongItemProps) => {
-    const {image, title, artist} = props;
+    const { song } = props;
     return (
-        <TouchableOpacity style={styles.container}>
-            <Image style={styles.image} source={{ uri: props.image }}></Image>
-            <View style={styles.songDetails}>
-                <Text style={styles.songName}>{props.title}</Text>
-                <Text style={styles.artist}>{props.artist}</Text>
-            </View>
-        </TouchableOpacity>
+        <View style={styles.container}
+            onPress={() => console.log(props.song.uri)}
+        >
+            <TouchableOpacity style={{ flexDirection: 'row' }}>
+                <Image style={styles.image} source={{ uri: props.song.imageUri }}></Image>
+                <View style={styles.songDetails}>
+                    <Text numberOfLines={1} style={styles.songName}>{props.song.title}</Text>
+                    <Text numberOfLines={1} style={styles.artist}>{props.song.artist}</Text>
+                </View>
+            </TouchableOpacity>
+            <TouchableOpacity>
+                <Entypo name="dots-three-vertical" size={22} color="darkgray" />
+            </TouchableOpacity>
+
+        </View>
     )
 }
 

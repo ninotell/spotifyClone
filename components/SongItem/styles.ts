@@ -4,12 +4,15 @@ const styles = StyleSheet.create({
     container:{
         width: "100%",
         flexDirection: 'row',
-        paddingHorizontal: 25,
-        marginTop: 15
+        paddingHorizontal: 15,
+        marginTop: 16,
+        justifyContent: 'space-between',
+        alignItems: 'center'
+
     },
     image:{
-        width: 60,
-        height: 60,
+        width: 53,
+        aspectRatio: 1/1,
         borderRadius: 10
     },
     songDetails:{
@@ -18,11 +21,11 @@ const styles = StyleSheet.create({
     },
     songName:{
         color: "white",
-        fontSize: 16        
+        fontSize: 15        
     },
     artist:{
         color: "darkgray",
-        fontSize: 15
+        fontSize: 14,
     },
 })
 

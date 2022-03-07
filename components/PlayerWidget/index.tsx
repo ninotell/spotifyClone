@@ -7,7 +7,7 @@ import { Audio } from 'expo-av';
 
 const song = {
     id: '4',
-    uri: 'http://d23dyxeqlo5psv.cloudfront.net/big_buck_bunny.mp4',
+    uri: 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3',
     imageUri: 'https://cache.boston.com/resize/bonzai-fba/Globe_Photo/2011/04/14/1302796985_4480/539w.jpg',
     title: 'High on You',
     artist: 'Helen',

@@ -1,14 +1,26 @@
-import { StyleSheet} from 'react-native'
+import { StyleSheet } from 'react-native'
 
 const styles = StyleSheet.create({
-    container: {
-        width: "100%",
-        backgroundColor: "red"
-      },
-      songList:{
-        marginBottom: 70
-      },     
-      
+  loadingContainer: {
+    height: "100%",
+    justifyContent: 'center',
+    alignItems: 'center',    
+  },
+  textLoading: {
+    fontSize: 25,
+    color: "darkgray"
+  },
+  container: {
+    width: "100%",
+    marginTop: 55
+  },
+  arrow:{
+    marginLeft: 20    
+  },
+  songList: {
+    marginBottom: 70
+  },
+
 })
 
 export default styles

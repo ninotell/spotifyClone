@@ -4,6 +4,7 @@ import styles from './styles'
 import { Album } from '../../types'
 import { useNavigation } from '@react-navigation/native'
 
+
 export type AlbumProps = {
   album: Album
 }
@@ -13,7 +14,7 @@ const AlbumItem = (props: AlbumProps) => {
   const navigation = useNavigation();
 
   const onPress = () => {
-    navigation.navigate("AlbumScreen");
+    navigation.navigate("AlbumScreen", props.album);
   }
 
   return (
@@ -24,7 +25,7 @@ const AlbumItem = (props: AlbumProps) => {
         <Image style={styles.image} source={{ uri: props.album.imageUri }}></Image>
       </TouchableOpacity>
       <Text style={styles.albumName} numberOfLines={2} >{props.album.name}</Text>
-      <Text style={styles.albumsNames} numberOfLines={2} >{props.album.artistsHeadline}</Text>
+      <Text style={styles.artistHeadline} numberOfLines={2} >{props.album.artistsHeadline}</Text>
 
     </View>
   )

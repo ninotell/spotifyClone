@@ -24,7 +24,6 @@ const HomeScreen = ({ navigation }: RootTabScreenProps<'HomeScreenNavigator'>) =
       try {
         const data = await API.graphql(graphqlOperation(listAlbumCategories))
         setCategories(data.data.listAlbumCategories.items)
-        console.log(data.data.listAlbumCategories.items)
       } catch (error) {
         console.log(error)
       }

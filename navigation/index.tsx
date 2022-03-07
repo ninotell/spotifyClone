@@ -110,12 +110,16 @@ function HomeScreenNavigator() {
       <HomeScreenStack.Screen
         name="HomeScreen"
         component={HomeScreen}
+        options={
+          { headerShown: false }
+        }
+        
       />
       <HomeScreenStack.Screen
         name="AlbumScreen"
         component={AlbumScreen}
         options={
-          { headerTitle: "AlbumScreen" }
+          { headerShown: false }
         }
       />
 

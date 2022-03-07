@@ -42,6 +42,7 @@ export const listAlbumCategories = /* GraphQL */ `
             id
             imageUri
             name
+            artistsHeadline
           }
         }
         createdAt
@@ -52,42 +53,26 @@ export const listAlbumCategories = /* GraphQL */ `
   }
 `;
 export const getAlbum = /* GraphQL */ `
-  query GetAlbum($id: ID!) {
-    getAlbum(id: $id) {
-      id
-      name
-      by
-      numberOfLikes
-      imageUri
-      artistsHeadline
-      albumCategory {
-        id
+query getAlbum($id: ID = "") {
+  getAlbum(id: $id) {
+    name
+    numberOfLikes
+    by
+    imageUri
+    artistsHeadline
+    songs {
+      items {
+        artist
+        imageUri
         title
-        albums {
-          nextToken
-        }
-        createdAt
-        updatedAt
+        uri
       }
-      songs {
-        items {
-          id
-          uri
-          imageUri
-          title
-          artist
-          createdAt
-          updatedAt
-          albumSongsId
-        }
-        nextToken
-      }
-      createdAt
-      updatedAt
-      albumCategoryAlbumsId
     }
   }
+}
 `;
+
+
 export const listAlbums = /* GraphQL */ `
   query ListAlbums(
     $filter: ModelAlbumFilterInput
