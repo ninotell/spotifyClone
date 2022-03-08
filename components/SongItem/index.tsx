@@ -1,8 +1,10 @@
 import { Text, View, Image, TouchableOpacity } from 'react-native'
-import React from 'react'
+import React, { useContext } from 'react'
 import styles from './styles'
 import { Song } from '../../types'
 import { Entypo } from '@expo/vector-icons';
+import { ConsoleLogger } from '@aws-amplify/core';
+import { AppContext } from '../../AppContext';
 
 export type SongItemProps = {
     song: Song;
@@ -10,11 +12,17 @@ export type SongItemProps = {
 
 const SongItem = (props: SongItemProps) => {
     const { song } = props;
+    const {setSongId} = useContext(AppContext);
+
+    const onPress = () => {
+        setSongId(props.song.id)
+    }
+
     return (
-        <View style={styles.container}
-            onPress={() => console.log(props.song.uri)}
-        >
-            <TouchableOpacity style={{ flexDirection: 'row' }}>
+        <View style={styles.container}>
+            <TouchableOpacity
+             style={{ flexDirection: 'row' }}
+             onPress={onPress}>
                 <Image style={styles.image} source={{ uri: props.song.imageUri }}></Image>
                 <View style={styles.songDetails}>
                     <Text numberOfLines={1} style={styles.songName}>{props.song.title}</Text>

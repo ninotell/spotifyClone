@@ -1,26 +1,35 @@
 import { Text, View, Image, TouchableOpacity } from 'react-native'
-import React, { useEffect, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import styles from './styles'
 import { AntDesign, FontAwesome } from '@expo/vector-icons';
 import { Audio } from 'expo-av';
+import { AppContext } from '../../AppContext';
+import { API, graphqlOperation } from "aws-amplify"
+import { getSong } from '../../src/graphql/queries';
+import { Song } from '../../types';
 
-
-const song = {
-    id: '4',
-    uri: 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3',
-    imageUri: 'https://cache.boston.com/resize/bonzai-fba/Globe_Photo/2011/04/14/1302796985_4480/539w.jpg',
-    title: 'High on You',
-    artist: 'Helen',
-}
 
 const PlayerWidget = () => {
-    const [sound, setSound] = useState<Sound|null>(null)
+    const [sound, setSound] = useState<Sound | null>(null)
     const [like, setLike] = useState<boolean>(false);
     const [isPlaying, setIsPlaying] = useState<boolean>(false)
     const [duration, setDuration] = useState<number | null>(null);
     const [songPosition, setSongPosition] = useState<number | null>(null);
+    const [song, setSong] = useState<Song>()
 
+    const { songId } = useContext(AppContext)
 
+    useEffect(() => {
+        const fetchSong = async () => {
+            try {
+                const data = await API.graphql(graphqlOperation(getSong, { id: songId }))
+                setSong(data.data.getSong)
+            } catch (error) {
+                console.log(error)
+            }
+        }
+        fetchSong()
+    }, [songId])
 
     const onPlaybackStatusUpdate = (status) => {
         setIsPlaying(status.isPlaying);
@@ -69,20 +78,28 @@ const PlayerWidget = () => {
     }
 
     useEffect(() => {
-        playCurrentSong()
-    }, [])
+        if (song) {
+            playCurrentSong()
+        }
+    }, [song])
+
+    if (!song) {
+        return null;
+    }
 
     return (
         <View style={styles.container}>
             <View style={[
-                    styles.progressBar,
-                    {width: getProgress()}
-                    ]}></View>
+                styles.progressBar,
+                { width: getProgress() }
+            ]}></View>
             <View style={styles.containerDetails}>
                 <View style={styles.songDetails}>
                     <Image style={styles.image} source={{ uri: song.imageUri }}></Image>
-                    <Text style={styles.songName}>{song.title}</Text>
-                    <Text style={styles.artist}>{song.artist}</Text>
+                    <View>
+                        <Text style={styles.songName}>{song.title}</Text>
+                        <Text style={styles.artist}>{song.artist}</Text>
+                    </View>
                 </View>
                 <View style={styles.buttons}>
                     <TouchableOpacity

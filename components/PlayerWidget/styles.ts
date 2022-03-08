@@ -18,7 +18,7 @@ const styles = StyleSheet.create({
         justifyContent: 'space-between',
     },
     image: {
-        height: "90%",
+        height: "85%",
         aspectRatio: 1 / 1,
         borderRadius: 10
     },
@@ -27,17 +27,16 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         justifyContent: 'center',
         alignItems: 'center',
-
     },
     songName: {
         color: "white",
-        fontSize: 16,
+        fontSize: 12,
         marginLeft: 10
     },
     artist: {
         color: "darkgray",
-        fontSize: 15,
-        marginLeft: 10
+        fontSize: 11,
+        marginLeft: 10,
     },
     buttons: {
         flexDirection: 'row',

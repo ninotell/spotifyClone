@@ -62,6 +62,7 @@ query getAlbum($id: ID = "") {
     artistsHeadline
     songs {
       items {
+        id
         artist
         imageUri
         title
